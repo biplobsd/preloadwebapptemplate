@@ -65,23 +65,6 @@ class About extends StatelessWidget {
                 },
               ),
               const SizedBox(
-                height: 10,
-              ),
-              TextButton(
-                onPressed: () async {
-                  if (!await launchUrl(AppUrl.speedOut)) {
-                    throw 'Could not launch ${AppUrl.speedOut}';
-                  }
-                },
-                child: Text(
-                  "Developed by SpeedOut, 2022",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodySmall!
-                      .copyWith(fontSize: 9),
-                ),
-              ),
-              const SizedBox(
                 height: 30,
               ),
               const Divider(),
@@ -100,11 +83,43 @@ class About extends StatelessWidget {
               ),
               DevInfoTile(
                 profileUrl:
-                    'https://avatars.githubusercontent.com/u/43641536?v=4',
-                name: "Biplob Kumar Sutradhar",
-                email: "biplobsd11@gmail.com",
-                role: "Lead developer",
-                devGithub: AppUrl.devGithubBiplob,
+                    'https://avatars.githubusercontent.com/u/108424965?v=4',
+                name: "Saied Hassan",
+                email: "",
+                role: "developer",
+                devGithub: AppUrl.devGithubSaied,
+              ),
+              DevInfoTile(
+                profileUrl:
+                    'https://avatars.githubusercontent.com/u/84588479?v=4',
+                name: "Robiul Awal",
+                email: "",
+                role: "developer",
+                devGithub: AppUrl.devGithubSaied,
+              ),
+              DevInfoTile(
+                profileUrl:
+                    'https://avatars.githubusercontent.com/u/84588479?v=4',
+                name: "Saied Hassan",
+                email: "",
+                role: "developer",
+                devGithub: AppUrl.devGithubSaied,
+              ),
+              DevInfoTile(
+                profileUrl:
+                    'https://avatars.githubusercontent.com/u/84588479?v=4',
+                name: "Rahat Almas",
+                email: "",
+                role: "developer",
+                devGithub: AppUrl.devGithubSaied,
+              ),
+              DevInfoTile(
+                profileUrl:
+                    'https://avatars.githubusercontent.com/u/84588479?v=4',
+                name: "Mahmudul Hasan Joy",
+                email: "",
+                role: "developer",
+                devGithub: AppUrl.devGithubSaied,
               ),
               const SizedBox(
                 height: 20,
