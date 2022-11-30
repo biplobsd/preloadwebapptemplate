@@ -4,9 +4,9 @@ import 'package:page_transition/page_transition.dart';
 
 import '../data/repository/horizon.dart';
 import '../view/about/about.dart';
-import '../view/asset_holder/asset_holder.dart';
+import '../view/login/login.dart';
 import '../view/checker/check_page.dart';
-import '../view/history/history.dart';
+import '../view/signup_page/signup_page.dart';
 import '../view/layout/layout.dart';
 import '../view/privacy_policy/privacy_policy.dart';
 import '../view/setting/setting_page.dart';
@@ -37,17 +37,17 @@ class Routes {
           alignment: Alignment.centerLeft,
           child: const SiteLayoutPage(),
         );
-      case AssetHolderPage.pathName:
+      case LoginPage.pathName:
         return PageTransition(
           type: PageTransitionType.scale,
           alignment: Alignment.centerLeft,
-          child: const AssetHolderPage(),
+          child: const LoginPage(),
         );
-      case HistoryPage.pathName:
+      case SignupPage.pathName:
         return PageTransition(
           type: PageTransitionType.scale,
           alignment: Alignment.centerLeft,
-          child: const HistoryPage(),
+          child: const SignupPage(),
         );
       case About.pathName:
         return PageTransition(

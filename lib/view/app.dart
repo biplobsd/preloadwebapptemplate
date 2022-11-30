@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ndialog/ndialog.dart';
 import 'package:overlay_support/overlay_support.dart';
+import 'package:preloadwebapptemplate/view/signup_page/signup_page.dart';
+import 'package:preloadwebapptemplate/view/login/login.dart';
 
 import '../constants/string.dart';
 import '../constants/theme/bloc/theme_bloc.dart';
@@ -52,44 +54,6 @@ class MyApp extends StatelessWidget {
               }
             },
           ),
-          BlocListener<SettingConfigCubit, SettingConfigState>(
-            listener: (context, state) async {
-              if (state is SettingConfigLoaded &&
-                  !settingConfCubit.localSettings.privacyPolicyAgree) {
-                var topContext =
-                    context.read<TopContextCubit>().topContextBackup;
-
-                await NDialog(
-                  title: const Text('Statement'),
-                  content: const SizedBox(
-                    height: 500,
-                    width: 1080,
-                    child: PrivacyPolicy(),
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: Platform.isAndroid ? () {
-                        SystemNavigator.pop();
-                      } : null,
-                      child: const Text('Exit'),
-                    ),
-                    TextButton(
-                      onPressed: () async {
-                        await settingConfCubit
-                            .changePrivacyPolicyAgree()
-                            .whenComplete(() => Navigator.pop(topContext));
-                      },
-                      child: const Text('Agree'),
-                    )
-                  ],
-                ).show(
-                  topContext,
-                  transitionType: DialogTransitionType.Bubble,
-                  dismissable: false,
-                );
-              }
-            },
-          ),
         ],
         child: ApplyMore(horizon: horizon),
       ),
@@ -130,7 +94,7 @@ class MainApp extends StatelessWidget {
         onGenerateRoute: Routes(horizon: horizon).onGenerateRoute,
         theme: light,
         darkTheme: dark,
-        initialRoute: SiteLayoutPage.pathName,
+        initialRoute: SignupPage.pathName,
       ),
     );
   }
